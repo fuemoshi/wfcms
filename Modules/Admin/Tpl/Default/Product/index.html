@@ -1,0 +1,60 @@
+<form class="form-inline definewidth m20" action="{:U(GROUP_NAME . '/Product/index')}" method="post">
+    产品名称：
+    <input type="text" name="title" id="title" class="abc input-default" placeholder="" value="{:I('title')}">&nbsp;&nbsp;
+    <select name="class1" id="">
+        <foreach name="proClass[1]" item="v">
+            <option value="{$key}" <if condition="$class1 eq $key">selected</if>>{$v}</option>
+        </foreach>
+    </select>
+    <select name="class2" id="">
+        <foreach name="proClass[2]" item="v">
+            <option value="{$key}" <if condition="$class2 eq $key">selected</if>>{$v}</option>
+        </foreach>
+    </select>
+    <input type="hidden" name="parent_id" value="{$Think.request.parent_id}"/>
+    <button type="submit" class="btn btn-primary">查询</button>&nbsp;&nbsp;
+    <button type="button" class="btn btn-success" id="addnew">添加产品</button>
+</form>
+<table class="table table-bordered table-hover definewidth m10" >
+    <thead>
+    <tr>
+        <th width="30">排序</th>
+        <th width="30">ID</th>
+        <th>产品名称</th>
+        <th>英文</th>
+        <th>分类1</th>
+        <th>分类2</th>
+        <th>参数1</th>
+        <th>参数2</th>
+        <th>创建时间</th>
+        <th>管理操作</th>
+    </tr>
+    </thead>
+    <foreach name='result' item='v'>
+        <tr>
+            <td>{$v.sort}</td>
+            <td>{$v.id}</td>
+            <td>{$v.title}</td>
+            <td>{$v.title_en}</td>
+            <td>{$proClass[1][$v['class1']]}</td>
+            <td>{$proClass[2][$v['class2']]}</td>
+            <td>{$v.argv1}</td>
+            <td>{$v.argv2}元</td>
+            <td>{$v.created_date}</td>
+            <td>
+                <a href="{:U(GROUP_NAME . '/Product/editProduct',array('id'=>$v['id'],'type'=>0))}">编辑</a>
+                <a href="{:U(GROUP_NAME . '/Product/delProduct',array('id'=>$v['id'],'parent_id'=>$v['parent_id']))}">删除</a>
+            </td>
+        </tr>
+    </foreach>
+</table>
+<div class="inline pull-right page">{$show}</div>
+
+<script language="Javascript">
+    $(function () {
+        $('#addnew').click(function(){
+            window.location.href="{:U(GROUP_NAME . '/Product/addProduct',array('parent_id'=>I('parent_id'),'type'=>0))}";
+        });
+    });
+</script>
+

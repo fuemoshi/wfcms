@@ -1,0 +1,67 @@
+<form class="form-inline definewidth m20">
+    <button type="button" class="btn btn-success" id="addnew">新增栏目</button>
+</form>
+<form class="form-inline" action="{:U(GROUP_NAME . '/Category/editSort')}" method="post">
+
+<table class="table table-bordered table-hover definewidth m10" >
+    <thead>
+    <tr>
+        <th>排序</th>
+        <th>ID</th>
+        <th>栏目名称</th>
+        <th>栏目类型</th>
+        <th>所属模型</th>
+        <th>数据量</th>
+        <th>管理操作</th>
+    </tr>
+    </thead>
+    <foreach name='result' item='v'>
+        <tr>
+            <td style="width:30px;">
+                <input size="2" name="data[{$v['id']}]" type="text" name="sort" value="{$v['sort']}"/>
+            </td>
+            <td>{$v.id}</td>
+            <td>
+                <php>
+                    if($v['deep']<=1)
+                        echo str_repeat('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─ ',$v['deep']);
+                    else
+                        echo str_repeat(str_repeat('&nbsp',8),$v['deep']).'└─ ';
+
+                </php>
+                {$v.name}
+            </td>
+            <td>{$categoryType[$v['type']]}</td>
+            <td>{$modelTable[$v['model_table']]}</td>
+            <td>{$cnt}</td>
+            <td>
+                  <a href="{:U(GROUP_NAME . '/Category/addCategory',array('id'=>$v['id']))}">添加子栏目</a>
+                  <a href="{:U(GROUP_NAME . '/Category/editCategory',array('id'=>$v['id']))}">编辑</a>
+                  <a href="##" onclick="del('{:U(GROUP_NAME . \'/Category/delCategory\',array(id=>$v[id]))})')">删除</a>
+            </td>
+        </tr>
+        </foreach>
+    <tr>
+        <td colspan="7">
+            <button type="submit" class="btn sort">排序</button>&nbsp;&nbsp;
+        </td>
+    </tr>
+</table>
+</form>
+
+
+<script language="Javascript">
+    $(function () {
+        $('#addnew').click(function(){
+            window.location.href="{:U(GROUP_NAME . '/Category/addCategory')}";
+        });
+
+    });
+    function del(url)
+    {
+        if(confirm("确定要删除吗？"))
+        {
+            window.location.href = url;
+        }
+    }
+</script>

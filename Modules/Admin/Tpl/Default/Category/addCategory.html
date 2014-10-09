@@ -1,0 +1,55 @@
+<form action="{:U(GROUP_NAME . '/Category/addCategory')}" method="post" enctype="multipart/form-data">
+<table class="table table-bordered table-hover definewidth m10">
+    <tr>
+        <td width="10%" class="tableleft">选择模型</td>
+        <td>
+            <select name="model_table" id="">
+                <foreach name="modelTable" item="v">
+                    <option value="{$key}">{$v}</option>
+                </foreach>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td class="tableleft">
+            上级栏目
+        </td>
+        <td>
+            {:W('SelectorTree',$category)}
+        </td>
+    </tr>
+    <tr>
+        <td class="tableleft">
+            栏目类型
+        </td>
+        <td>
+            列表类型 <input type="radio" name="type" value="0" checked/>&nbsp;&nbsp;
+            单页面 <input type="radio" name="type" value="1"/>
+        </td>
+    </tr>
+    <tr>
+        <td class="tableleft">栏目名称</td>
+        <td><input type="text" name="name"/></td>
+    </tr>
+    <tr>
+        <td class="tableleft">栏目图片</td>
+        <td>
+            <input name="image[]" type="file" />
+        </td>
+    </tr>
+   <tr>
+        <td class="tableleft"></td>
+        <td>
+            <input type="hidden" name="id" value=""/>
+            <button type="submit" class="btn btn-primary" type="button">保存</button>
+            &nbsp;&nbsp;<button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
+        </td>
+    </tr>
+
+</table>
+</form>
+<script type="text/javascript">
+    $(function(){
+        $("#parent_id").val('{$parent_id}');
+    })
+</script>

@@ -1,0 +1,26 @@
+<div class="page_box">
+    <div class="pagebg_top">
+        <div class="pagebg_bottom" style="padding-bottom:80px;">
+            <div class="page_title_line"><img src="__IMAGES__/t_arrival.png" width="202" height="62"></div>
+            <div class="page_intro">秉承天然纯萃，沿袭古方美颜，贯通中西智慧！优理氏穿越百年，在探索美丽的时空隧道中一路激情绽放，不断给人惊喜……</div>
+
+            <div class="page_best_box">
+                <div class="page_best_line_box2">
+                    <foreach name="result" item="v">
+                        <div class="new_pro_list_box">
+                            <div class="new_pro_pic"><a href="{:U(GROUP_NAME . '/Index/products_show',array('id'=>$v['id']))}"><img
+                                    src="__UPLOADS__/{$v['images']|substr_f}" height="186"></a></div>
+                            <div class="new_pro_tlist_title">{$v.title}</div>
+                            <div class="new_pro_list_txt">
+                            {$v.desc|htmlspecialchars_decode}
+                            </div>
+                        </div>
+                    </foreach>
+                    <div class="c"></div>
+                </div>
+                <div class="c"></div>
+            </div>
+            <div class="c"></div>
+        </div>
+    </div>
+</div>

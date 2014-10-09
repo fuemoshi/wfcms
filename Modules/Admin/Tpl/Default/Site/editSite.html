@@ -1,0 +1,47 @@
+<form action="{:U(GROUP_NAME . '/Site/editSite')}"
+      method="post" class="definewidth m20" enctype="multipart/form-data">
+    <table class="table table-bordered table-hover m10">
+        <tr>
+            <td class="tableleft" style="width:100px;">网站名称</td>
+            <td><input type="text" name="site_name" value="{$result.site_name}"/></td>
+        </tr>
+        <tr>
+            <td class="tableleft">网站关键字</td>
+            <td><input type="text" style="width: 500px;" name="keywords" value="{$result.keywords}"/></td>
+        </tr>
+        <tr>
+            <td class="tableleft">网站描述</td>
+            <td>
+                <textarea name="description" id="" style="width:500px;height:100px;">{$result.description}</textarea>
+            </td>
+        </tr>
+        <tr class="tr-argv1">
+            <td class="tableleft">公司热线</td>
+            <td><input type="text" name="hot_line" value="{$result.hot_line}"/></td>
+        </tr>
+        <tr>
+            <td class="tableleft">客服qq</td>
+            <td><input type="text" name="qq_online" value="{$result.qq_online}"/></td>
+        </tr>
+        <tr class="">
+            <td class="tableleft">联系我们</td>
+            <td>
+                <textarea id="editor_id" name="contact" style="width:700px;height:300px;">{$result.contact}</textarea>
+            </td>
+        </tr>
+        <tr>
+            <td class="tableleft"></td>
+            <td>
+                <input type="hidden" name="id" value="{$result.id}"/>
+                <button type="submit" class="btn btn-primary" type="button">保存</button>
+            </td>
+        </tr>
+    </table>
+</form>
+<script charset="utf-8" src="__JS__/kindeditor/kindeditor.js"></script>
+<script charset="utf-8" src="__JS__/kindeditor/lang/zh_CN.js"></script>
+<script>
+    KindEditor.ready(function(K) {
+        window.editor = K.create('#editor_id');
+    });
+</script>

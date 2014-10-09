@@ -1,0 +1,84 @@
+<form action="{:U(GROUP_NAME . '/Product/addProduct')}"
+      method="post" class="definewidth m20" enctype="multipart/form-data">
+<table class="table table-bordered table-hover m10">
+    <tr>
+        <td class="tableleft" style="width:100px;">产品名称</td>
+        <td><input type="text" name="title"/></td>
+    </tr>
+    <tr>
+        <td class="tableleft" style="width:100px;">英文名称</td>
+        <td><input type="text" name="title_en"/></td>
+    </tr>
+    <tr>
+        <td class="tableleft">分类1(肤肌)</td>
+        <td>
+            <select name="class1" id="">
+                <foreach name="proClass[1]" item="v">
+                    <option value="{$key}">{$v}</option>
+                </foreach>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td class="tableleft">分类2(功效)</td>
+        <td>
+            <select name="class2">
+                <foreach name="proClass[2]" item="v">
+                    <option value="{$key}">{$v}</option>
+                </foreach>
+            </select>
+        </td>
+    </tr>
+    <tr class="tr-image">
+        <td class="tableleft">图片</td>
+        <td>
+            <input name="image[]" type="file" /> <a href="#" class="addImage">添加</a>
+        </td>
+    </tr>
+    <tr class="tr-argv1">
+        <td class="tableleft">参数1(容量)</td>
+        <td><input type="text" name="argv1" value=""/></td>
+    </tr>
+    <tr>
+        <td class="tableleft">参数2(价格)</td>
+        <td><input type="text" name="argv2" value="0"/>(元)</td>
+    </tr>
+    <tr class="">
+        <td class="tableleft">产品介绍</td>
+        <td>
+            <textarea id="editor_id" name="desc" style="width:700px;height:300px;"></textarea>
+        </td>
+    </tr>
+    <tr class="">
+        <td class="tableleft">使用方法</td>
+        <td>
+            <textarea name="usage" style="width:500px;height:200px;"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td class="tableleft">排序</td>
+        <td><input type="text" style="width: 30px;" name="sort" value="0"/></td>
+    </tr>
+    <tr>
+        <td class="tableleft"></td>
+        <td>
+            <input type="hidden" name="parent_id" value="{:I('parent_id')}"/>
+            <input type="hidden" name="type" value="{:I('type')}"/>
+            <button type="submit" class="btn btn-primary" type="button">保存</button>
+        </td>
+    </tr>
+</table>
+</form>
+<script charset="utf-8" src="__JS__/kindeditor/kindeditor.js"></script>
+<script charset="utf-8" src="__JS__/kindeditor/lang/zh_CN.js"></script>
+<script>
+    KindEditor.ready(function(K) {
+        window.editor = K.create('#editor_id');
+    });
+    $(function(){
+       $('.addImage').click(function(){
+           var obj = $('<tr><td></td><td><input name="image[]" type="file" /></td></tr>');
+           $('.tr-argv1').before(obj);
+       });
+    });
+</script>

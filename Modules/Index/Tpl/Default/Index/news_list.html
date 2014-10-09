@@ -1,0 +1,35 @@
+<div class="page_box">
+    <div class="pagebg_top">
+        <div class="pagebg_bottom">
+            <include file="Public:page_left"/>
+            <div class="page_right_box2">
+                <div class="news_box">
+                    <div class="news_top_title">{$category[$parent_id]['name']}</div>
+                    <div class="news_txt_list_box">
+                        <foreach  name="result" item="v">
+                            <div class="activity_line_box">
+                                <div class="activty_pic">
+                                    <a href="{:U(GROUP_NAME . '/Index/news_show',array('id'=>$v['id']))}">
+                                        <img src="__UPLOADS__/{$v['images']}" width="220" border="0">
+                                    </a>
+                                </div>
+                                <div class="activty_info">
+                                <div class="activty_title">
+                                    <a href="{:U(GROUP_NAME . '/Index/news_show',array('id'=>$v['id']))}">{$v['title']}</a>
+                                </div>
+                                    <div class="activty_intro">
+                                        <php>echo mb_substr(strip_tags(htmlspecialchars_decode($result[0]['content'])),0,120,'utf-8');</php>...
+                                    </div>
+                                </div>
+                                <div class="c"></div>
+                            </div>
+                        </foreach>
+                        <div class="c"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="c"></div>
+        </div>
+    </div>
+</div>

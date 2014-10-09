@@ -1,0 +1,47 @@
+<div class="page_box">
+    <div class="pagebg_top">
+        <div class="pagebg_bottom" style="padding-bottom:80px;">
+            <div class="page_title_line"><img src="__IMAGES__/t_sellers.png" width="187" height="61"></div>
+            <!--<div class="page_title_best"><img src="__IMAGES__/t_best1.gif"></div>-->
+            <div class="page_best_box">
+                <foreach name="result1" item="v">
+                    <div class="page_best_list_box">
+                        <div class="page_best_list_pic">
+                            <a href="{:U(GROUP_NAME . '/Index/products_show',array('id'=>$v['id']))}"><img
+                                    src="__UPLOADS__/{$v['images']|substr_f}" height="155" width="122" border="0"></a></div>
+                        <div class="page_best_list_info_box">
+                            <div class="page_best_list_title1">{$v.title}</div>
+                            <div class="page_best_list_txt">
+                                {$v.desc|htmlspecialchars_decode}
+                            </div>
+                        </div>
+                    </div>
+
+                </foreach>
+            </div>
+            <div class="c"></div>
+            <div class="page_title_best"><img src="__IMAGES__/t_best2.gif"></div>
+
+            <div class="page_best_box">
+                <div class="page_best_line_box">
+                    <foreach name="result2" item="v">
+                        <div class="page_best_list_box2">
+                            <div class="page_best_list_pic2"><a href="{:U(GROUP_NAME . '/Index/products_show',array('id'=>$v['id']))}">
+                                <img src="__UPLOADS__/{$v['images']|substr_f}" width="233" height="146" border="0"></a></div>
+                            <div class="page_best_list_info_box2">
+                                <div class="page_best_list_title1">{$v.title}</div>
+                                <div class="page_best_list_txt2">
+                                    {$v.desc|htmlspecialchars_decode}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="c"></div>
+                    </foreach>
+                </div>
+                <div class="c"></div>
+            </div>
+
+            <div class="c"></div>
+        </div>
+    </div>
+</div>

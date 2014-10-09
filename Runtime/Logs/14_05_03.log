@@ -1,0 +1,271 @@
+[ 2014-05-03T21:59:25+08:00 ] 14.17.34.191 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000916s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001012s ]
+SQL: SHOW COLUMNS FROM `wf_site` [ RunTime:0.000915s ]
+SQL: SELECT * FROM `wf_site` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000115s ]
+SQL: SHOW COLUMNS FROM `wf_advertise` [ RunTime:0.001296s ]
+SQL: SELECT `id`,`title`,`url`,`images` FROM `wf_advertise` WHERE ( `position` = 1 ) ORDER BY sort asc  [ RunTime:0.000096s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: test /var/www/wfcms/Runtime/Cache/Index/d7b0224c1de92bf80793a3176fd309e6.php 第 14 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.040600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040690s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000362s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000588s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000406s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000580s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002114s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000620s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000699s ]
+
+[ 2014-05-03T21:59:25+08:00 ] 183.60.35.78 /index.php?g=Admin&m=Login&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000376s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.015295s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015805s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.057237s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.057320s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000645s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000686s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000430s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000539s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002481s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000769s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000821s ]
+
+[ 2014-05-03T21:59:26+08:00 ] 14.17.18.144 /index.php/Admin
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001113s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001185s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000342s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000488s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000908s ]
+
+[ 2014-05-03T21:59:26+08:00 ] 14.17.18.144 /index.php?g=Admin&m=Login&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000389s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000478s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000964s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006185s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006253s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000289s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000323s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000184s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000325s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001286s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000415s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000485s ]
+
+[ 2014-05-03T21:59:28+08:00 ] 14.17.29.92 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000495s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000588s ]
+SQL: SHOW COLUMNS FROM `wf_site` [ RunTime:0.001007s ]
+SQL: SELECT * FROM `wf_site` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000105s ]
+SQL: SHOW COLUMNS FROM `wf_advertise` [ RunTime:0.000760s ]
+SQL: SELECT `id`,`title`,`url`,`images` FROM `wf_advertise` WHERE ( `position` = 1 ) ORDER BY sort asc  [ RunTime:0.000088s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: test /var/www/wfcms/Runtime/Cache/Index/d7b0224c1de92bf80793a3176fd309e6.php 第 14 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.010257s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010328s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000310s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000385s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000246s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000380s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001535s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000444s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000501s ]
+
+[ 2014-05-03T21:59:32+08:00 ] 119.147.146.189 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000337s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000402s ]
+SQL: SHOW COLUMNS FROM `wf_site` [ RunTime:0.000972s ]
+SQL: SELECT * FROM `wf_site` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000107s ]
+SQL: SHOW COLUMNS FROM `wf_advertise` [ RunTime:0.000737s ]
+SQL: SELECT `id`,`title`,`url`,`images` FROM `wf_advertise` WHERE ( `position` = 1 ) ORDER BY sort asc  [ RunTime:0.000094s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: test /var/www/wfcms/Runtime/Cache/Index/d7b0224c1de92bf80793a3176fd309e6.php 第 14 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.010776s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010835s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000277s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000317s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000154s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000283s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001162s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000413s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000459s ]
+
+[ 2014-05-03T21:59:32+08:00 ] 113.65.100.57 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000374s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000449s ]
+SQL: SHOW COLUMNS FROM `wf_site` [ RunTime:0.001074s ]
+SQL: SELECT * FROM `wf_site` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000125s ]
+SQL: SHOW COLUMNS FROM `wf_advertise` [ RunTime:0.000873s ]
+SQL: SELECT `id`,`title`,`url`,`images` FROM `wf_advertise` WHERE ( `position` = 1 ) ORDER BY sort asc  [ RunTime:0.000097s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: test /var/www/wfcms/Runtime/Cache/Index/d7b0224c1de92bf80793a3176fd309e6.php 第 14 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.010234s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010299s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000288s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000382s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000188s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000390s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001414s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000549s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000633s ]
+
+[ 2014-05-03T21:59:43+08:00 ] 113.65.100.57 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000473s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000543s ]
+SQL: SHOW COLUMNS FROM `wf_site` [ RunTime:0.001356s ]
+SQL: SELECT * FROM `wf_site` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000126s ]
+SQL: SHOW COLUMNS FROM `wf_advertise` [ RunTime:0.000850s ]
+SQL: SELECT `id`,`title`,`url`,`images` FROM `wf_advertise` WHERE ( `position` = 1 ) ORDER BY sort asc  [ RunTime:0.000116s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: test /var/www/wfcms/Runtime/Cache/Index/d7b0224c1de92bf80793a3176fd309e6.php 第 14 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.013868s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013950s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000409s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000399s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000193s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000395s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001583s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000566s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000637s ]
+
+[ 2014-05-03T21:59:49+08:00 ] 113.65.100.57 /index.php?g=Index&m=Index&a=about
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000332s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000397s ]
+SQL: SHOW COLUMNS FROM `wf_site` [ RunTime:0.000982s ]
+SQL: SELECT * FROM `wf_site` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000106s ]
+SQL: SHOW COLUMNS FROM `wf_category` [ RunTime:0.000826s ]
+SQL: SELECT `id`,`name`,`type`,`images` FROM `wf_category` WHERE ( `parent_id` = 9 ) ORDER BY sort asc,id desc  [ RunTime:0.000088s ]
+NOTIC: [8] Indirect modification of overloaded property IndexAction::$category has no effect /var/www/wfcms/Modules/Index/Action/IndexAction.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `wf_news` [ RunTime:0.000858s ]
+SQL: SELECT * FROM `wf_news` WHERE ( `parent_id` = 23 ) LIMIT 1   [ RunTime:0.000091s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: test /var/www/wfcms/Runtime/Cache/Index/e91a89b95183f3a519a4a8aff8cdfcdb.php 第 14 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.232323s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.232457s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000526s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000388s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000197s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000307s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001601s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000569s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000640s ]
+
+[ 2014-05-03T21:59:50+08:00 ] 113.65.100.57 /index.php?g=Index&m=Index&a=products
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000334s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000398s ]
+SQL: SHOW COLUMNS FROM `wf_site` [ RunTime:0.001272s ]
+SQL: SELECT * FROM `wf_site` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000098s ]
+SQL: SHOW COLUMNS FROM `wf_category` [ RunTime:0.001095s ]
+SQL: SELECT `id`,`name`,`type`,`images` FROM `wf_category` WHERE ( `parent_id` = 14 ) ORDER BY sort asc,id desc  [ RunTime:0.000084s ]
+NOTIC: [8] Indirect modification of overloaded property IndexAction::$category has no effect /var/www/wfcms/Modules/Index/Action/IndexAction.class.php 第 82 行.
+SQL: SHOW COLUMNS FROM `wf_product` [ RunTime:0.000963s ]
+SQL: SELECT * FROM `wf_product` WHERE ( `parent_id` = 18 ) ORDER BY sort asc,id desc  [ RunTime:0.000124s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: test /var/www/wfcms/Runtime/Cache/Index/48ae2883003b94f4b1e0af3f1275b892.php 第 14 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.016615s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016677s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000343s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000317s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000149s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000404s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001406s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000465s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000514s ]
+
+[ 2014-05-03T21:59:52+08:00 ] 113.65.100.57 /index.php?g=Index&m=Index&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000348s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000427s ]
+SQL: SHOW COLUMNS FROM `wf_site` [ RunTime:0.001060s ]
+SQL: SELECT * FROM `wf_site` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000111s ]
+SQL: SHOW COLUMNS FROM `wf_advertise` [ RunTime:0.000844s ]
+SQL: SELECT `id`,`title`,`url`,`images` FROM `wf_advertise` WHERE ( `position` = 1 ) ORDER BY sort asc  [ RunTime:0.000098s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: test /var/www/wfcms/Runtime/Cache/Index/d7b0224c1de92bf80793a3176fd309e6.php 第 14 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.011271s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011392s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000393s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000398s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000182s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000360s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001520s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000455s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000515s ]
+
+[ 2014-05-03T22:00:09+08:00 ] 14.17.18.147 /index.php?g=Index&m=Index&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000428s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000512s ]
+SQL: SHOW COLUMNS FROM `wf_site` [ RunTime:0.001410s ]
+SQL: SELECT * FROM `wf_site` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000225s ]
+SQL: SHOW COLUMNS FROM `wf_advertise` [ RunTime:0.001291s ]
+SQL: SELECT `id`,`title`,`url`,`images` FROM `wf_advertise` WHERE ( `position` = 1 ) ORDER BY sort asc  [ RunTime:0.000124s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: test /var/www/wfcms/Runtime/Cache/Index/d7b0224c1de92bf80793a3176fd309e6.php 第 14 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.012659s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012746s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000317s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000329s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000164s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000343s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001319s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000634s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000713s ]
+
+[ 2014-05-03T22:00:35+08:00 ] 221.172.177.166 /index.php?g=Index&m=Index&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000423s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000499s ]
+SQL: SHOW COLUMNS FROM `wf_site` [ RunTime:0.001033s ]
+SQL: SELECT * FROM `wf_site` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000126s ]
+SQL: SHOW COLUMNS FROM `wf_advertise` [ RunTime:0.001002s ]
+SQL: SELECT `id`,`title`,`url`,`images` FROM `wf_advertise` WHERE ( `position` = 1 ) ORDER BY sort asc  [ RunTime:0.000105s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: test /var/www/wfcms/Runtime/Cache/Index/d7b0224c1de92bf80793a3176fd309e6.php 第 14 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.011481s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011548s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000353s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000317s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000172s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000344s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001345s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000554s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000618s ]
+

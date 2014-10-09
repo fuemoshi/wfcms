@@ -1,0 +1,44 @@
+<form class="form-inline definewidth m20" action="{:U(GROUP_NAME . '/Rbac/userLog')}" method="post">
+    帐号名：
+    <input type="text" name="username" value="{$Think.request.username}" id="username" class="abc input-default" placeholder="" value="">&nbsp;&nbsp;
+    开始时间：
+    <input style="width: 100px;" value="{$Think.request.start}" class="Wdate" name="start" type="text" onClick="WdatePicker()">
+    结束时间：
+    <input style="width: 100px;" value="{$Think.request.end}" class="Wdate" name="end" type="text" onClick="WdatePicker()">
+
+    <button type="submit" class="btn btn-primary">查询</button>&nbsp;&nbsp;
+    <button type="reset" class="reset btn btn-primary">清空</button>&nbsp;&nbsp;
+</form>
+<table class="table table-bordered table-hover definewidth m10" >
+    <thead>
+    <tr>
+        <th>帐号</th>
+        <th>模块</th>
+        <th>操作</th>
+        <th>内容</th>
+        <th>ip</th>
+        <th>创建时间</th>
+    </tr>
+    </thead>
+    <foreach name='result' item='v'>
+        <tr>
+            <td>{$v.username}</td>
+            <td>{$nodeMap[2][$v['module']]|default=$v['module']}</td>
+            <td>{$nodeMap[3][$v['action']]|default=$v['action']}</td>
+            <td>{$v.info}</td>
+            <td>{$v.ip}</td>
+            <td>{$v.created_date}</td>
+        </tr>
+    </foreach>
+</table>
+<div class="inline pull-right page">{$show}</div>
+
+
+<script type="text/javascript">
+    $(function () {
+        $('.reset').click(function(){
+            $(this).parents('form').find('input').attr('value','');
+        });
+    });
+
+</script>

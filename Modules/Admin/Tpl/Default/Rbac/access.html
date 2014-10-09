@@ -1,0 +1,56 @@
+<script type="text/javascript">
+    $(function(){
+//        $('input[level=1]').click(function(){
+//            var inputs = $(this).parents('.app').find('input');
+//            $(this).prop('checked') ? inputs.prop('checked',true) : inputs.prop('checked',false);
+//        });
+
+        $('input[level=2]').click(function(){
+            var inputs = $(this).parents('dl').find('input');
+            $(this).prop('checked') ? inputs.prop('checked',true) : inputs.prop('checked',false);
+        });
+
+    });
+</script>
+<div id="nodeWrap">
+        <form action="{:U(GROUP_NAME . '/Rbac/setAccess')}" method="post">
+            <table class="table table-bordered table-hover definewidth m10">
+                 <foreach name="node" item="app">
+                     <tr class="app">
+                         <td>
+                            <p>
+                             <strong>{$app.title}</strong>
+                                <input type="checkbox" name="access[]" value="{$app.id}_1" level="1"
+                                       <if condition='$app["access"]'>checked=checked</if> />
+                            </p>
+
+                             <foreach name="app.child" item="action">
+                                 <dl>
+                                     <dt>
+                                         <strong>{$action.title}</strong>
+                                         <input type="checkbox" name="access[]" value="{$action.id}_2" level="2"
+                                         <if condition='$action["access"]'>checked=checked</if> />
+                                     </dt>
+
+                                     <foreach name="action.child" item="method">
+                                         <dd>
+                                             <span>{$method.title}</span>
+                                             <input type="checkbox" name="access[]" value="{$method.id}_3" level="3"
+                                             <if condition='$method["access"]'>checked=checked</if> />
+                                         </dd>
+                                     </foreach>
+                                 </dl>
+                             </foreach>
+                         </td>
+                     </tr>
+
+                 </foreach>
+                <tr>
+                    <td>
+                        <input type="hidden" name="rid" value="{$rid}"/>
+                        <button type="submit" class="btn btn-primary" type="button">保存</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+</div>

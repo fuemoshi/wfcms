@@ -1,0 +1,63 @@
+<form action="{:U(GROUP_NAME . '/News/editNews')}"
+      method="post" class="definewidth m20" enctype="multipart/form-data">
+<table class="table table-bordered table-hover m10">
+    <tr>
+        <td class="tableleft" style="width:100px;">标题</td>
+        <td><input type="text" name="title" value="{$result.title}"/></td>
+    </tr>
+    <tr class="tr-image">
+        <td class="tableleft">图片</td>
+        <td>
+            <ul>
+                <foreach name="images" item="v">
+                    <if condition="$v">
+                        <li style="padding:5px;">
+                            <img src="__UPLOADS__/thumb_{$v}" width="100" height="100" alt=""/>
+                            <input type="text" name="images[]" value="{$v}"/>
+                            <a href="#" class="delImage">移除</a>
+                        </li>
+                    </if>
+                </foreach>
+            </ul>
+            <a href="#" class="addImage">添加</a>
+        </td>
+    </tr>
+    <tr class="tr-content">
+        <td class="tableleft">内容</td>
+        <td>
+            <textarea id="editor_id" name="content" style="width:700px;height:300px;">
+                {$result.content}
+            </textarea>
+        </td>
+    </tr>
+    <tr>
+        <td class="tableleft">排序</td>
+        <td><input type="text" style="width: 30px;" name="sort" value="{$result.sort}"/></td>
+    </tr>
+    <tr>
+        <td class="tableleft"></td>
+        <td>
+            <input type="hidden" name="id" value="{$result.id}"/>
+            <input type="hidden" name="parent_id" value="{$result.parent_id}"/>
+            <input type="hidden" name="type" value="{:I('type')}"/>
+            <button type="submit" class="btn btn-primary" type="button">保存</button>
+        </td>
+    </tr>
+</table>
+</form>
+<script charset="utf-8" src="__JS__/kindeditor/kindeditor.js"></script>
+<script charset="utf-8" src="__JS__/kindeditor/lang/zh_CN.js"></script>
+<script>
+    KindEditor.ready(function(K) {
+        window.editor = K.create('#editor_id');
+    });
+    $(function(){
+       $('.addImage').click(function(){
+           var obj = $('<tr><td></td><td><input name="image[]" type="file" /></td></tr>');
+           $('.tr-content').before(obj);
+       });
+       $('.delImage').click(function(){
+           $(this).parents('li').remove();
+       });
+    });
+</script>

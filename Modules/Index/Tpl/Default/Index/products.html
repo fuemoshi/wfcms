@@ -1,0 +1,76 @@
+<div class="page_box">
+    <div class="pagebg_top">
+        <div class="pagebg_bottom">
+            <include file="Public:page_left"/>
+
+            <div class="page_right_box">
+                <if condition="$category[$parent_id]['images'] neq ''">
+                    <div class="products_right_banner">
+                        <img src="__UPLOADS__/{$category[$parent_id].images}" width="720" height="286">
+                    </div>
+                </if>
+                <div class="page_pro_so">
+                    <div class="page_pro_so_list">
+                        <script type="text/javascript">
+                            function select1(type, selectValue) {
+                                if(selectValue!="")  {
+                                    document.selectForm.selectType.value=type;
+                                    document.selectForm.selectValue.value=selectValue;
+                                    document.selectForm.submit();
+                                }
+                            }
+                        </script>
+                        <form action="{:U(GROUP_NAME . '/Index/products')}" id="searchForm" name="selectForm" style="margin:0; padding:0;" method="post">
+                            <input type="hidden" name="pid" value="{:I('pid')}">
+                            <input type="hidden" name="type" value="0">
+                            <label for="select"></label>
+                            <select name="class1" id="select" class="proclass">
+                                <foreach name="proClass[1]" item="v">
+                                    <option value="{$key}" <if condition="$class1 eq $key">selected</if>>{$v}</option>
+                                </foreach>
+                            </select>
+                            <select name="class2" id=""  class="proclass">
+                                <foreach name="proClass[2]" item="v">
+                                    <option value="{$key}" <if condition="$class2 eq $key">selected</if>>{$v}</option>
+                                </foreach>
+                            </select>
+                        </form>
+                    </div>
+                    <div class="page_path">首页&nbsp;&gt;&nbsp;理肤产品</div>
+                </div>
+                <div class="page_pro_list_box">
+
+                    <div class="pro_line_box">
+                        <foreach name="result" item="v">
+                            <div class="page_pro_list">
+                                <div class="page_pro_pic">
+                                    <a href="{:U(GROUP_NAME . '/Index/products_show',array('id'=>$v['id']))}">
+                                        <img src="__UPLOADS__/{$v['images']|substr_f}" height="110" border="0">
+                                    </a>
+                                </div>
+                                <div class="page_pro_info">
+                                    <div class="pro_cn_name">{$v.title}</div>
+                                    <div class="pro_en_name">{$v.title_en}</div>
+                                    <div class="pro_more"><a href="{:U(GROUP_NAME . '/Index/products_show',array('id'=>$v['id']))}">
+                                        <img src="__IMAGES__/more.gif" width="83" height="19" border="0"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </foreach>
+                        <div class="c"></div>
+                    </div>
+
+                    <div class="c"></div>
+                </div>
+            </div>
+            <div class="c"></div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function(){
+        $('.proclass').change(function(){
+            $(this).parent('#searchForm').submit();
+        });
+    });
+</script>

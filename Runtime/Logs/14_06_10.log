@@ -1,0 +1,1205 @@
+[ 2014-06-10T11:31:33+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Category&a=category
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000362s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000453s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000910s ]
+
+[ 2014-06-10T11:31:33+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Login&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000370s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000596s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001085s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005435s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005486s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000279s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000275s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000134s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000310s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001142s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000397s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000443s ]
+
+[ 2014-06-10T11:31:33+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000523s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000680s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001372s ]
+
+[ 2014-06-10T11:31:39+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Login&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000331s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000456s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000880s ]
+SQL: SHOW COLUMNS FROM `wf_admin_user` [ RunTime:0.001239s ]
+SQL: SELECT * FROM `wf_admin_user` WHERE ( `username` = 'admin' ) LIMIT 1   [ RunTime:0.000296s ]
+SQL: UPDATE `wf_admin_user` SET `last_login_date`='2014-06-10 11:31:39',`last_login_ip`='121.32.130.122' WHERE ( `id` = 1 ) [ RunTime:0.000795s ]
+SQL: SHOW COLUMNS FROM `wf_opt_log` [ RunTime:0.000697s ]
+SQL: INSERT INTO `wf_opt_log` (`created_date`,`ip`,`username`,`uid`,`action`,`module`,`info`) VALUES ('2014-06-10 11:31:39','121.32.130.122','admin',1,'login','Login','') [ RunTime:0.000380s ]
+
+[ 2014-06-10T11:31:39+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Index&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000347s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000496s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000938s ]
+SQL: select node.id,node.name from wf_admin_role as role,wf_admin_role_user as user,wf_admin_access as access ,wf_admin_node as node where user.user_id='1' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=1 and node.status=1 [ RunTime:0.000098s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006303s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006365s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000238s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000243s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000152s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000314s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001101s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000392s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000436s ]
+
+[ 2014-06-10T11:31:42+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Personal&a=editProfile
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000337s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000465s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000895s ]
+SQL: SHOW COLUMNS FROM `wf_admin_user` [ RunTime:0.001190s ]
+SQL: SELECT * FROM `wf_admin_user` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000258s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.022737s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022833s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000367s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000413s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000190s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000403s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001567s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000601s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000669s ]
+
+[ 2014-06-10T11:31:43+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Site&a=editSite
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000362s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000503s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000960s ]
+SQL: SHOW COLUMNS FROM `wf_site` [ RunTime:0.001014s ]
+SQL: SELECT * FROM `wf_site` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000107s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006231s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006284s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000218s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000330s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000136s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000263s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001083s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000400s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000444s ]
+
+[ 2014-06-10T11:31:49+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Personal&a=editProfile
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000328s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000449s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000869s ]
+SQL: SHOW COLUMNS FROM `wf_admin_user` [ RunTime:0.001168s ]
+SQL: SELECT * FROM `wf_admin_user` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000100s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006764s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006836s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000323s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000350s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000178s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000394s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001433s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000534s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000598s ]
+
+[ 2014-06-10T11:31:51+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Category&a=category
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000332s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000458s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000892s ]
+SQL: SHOW COLUMNS FROM `wf_category` [ RunTime:0.000995s ]
+SQL: SELECT `id`,`name`,parent_id pid,`type`,`model_table`,`sort` FROM `wf_category` ORDER BY sort asc,id desc  [ RunTime:0.000129s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.011278s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011352s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000301s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000347s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000144s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000289s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001239s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000442s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000490s ]
+
+[ 2014-06-10T11:42:20+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Index&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000370s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000436s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000911s ]
+SQL: select node.id,node.name from wf_admin_role as role,wf_admin_role_user as user,wf_admin_access as access ,wf_admin_node as node where user.user_id='1' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=1 and node.status=1 [ RunTime:0.000084s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006379s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006430s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000238s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000234s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000132s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000255s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000988s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000397s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000440s ]
+
+[ 2014-06-10T11:42:22+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Category&a=category
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000354s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000437s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000883s ]
+SQL: SHOW COLUMNS FROM `wf_category` [ RunTime:0.000918s ]
+SQL: SELECT `id`,`name`,parent_id pid,`type`,`model_table`,`sort` FROM `wf_category` ORDER BY sort asc,id desc  [ RunTime:0.000099s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.010460s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010525s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000264s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000308s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000137s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000268s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001124s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000392s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000441s ]
+
+[ 2014-06-10T11:42:46+08:00 ] 121.32.130.122 /index.php
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000533s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000635s ]
+SQL: SHOW COLUMNS FROM `wf_site` [ RunTime:0.001197s ]
+SQL: SELECT * FROM `wf_site` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000122s ]
+SQL: SHOW COLUMNS FROM `wf_advertise` [ RunTime:0.001037s ]
+SQL: SELECT `id`,`title`,`url`,`images` FROM `wf_advertise` WHERE ( `position` = 1 ) ORDER BY sort asc  [ RunTime:0.000119s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: test /var/www/wfcms/Runtime/Cache/Index/d7b0224c1de92bf80793a3176fd309e6.php 第 14 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.010841s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010916s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000378s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000390s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000184s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000380s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001520s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000579s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000645s ]
+
+[ 2014-06-10T11:42:50+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Category&a=category
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000437s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000437s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000966s ]
+SQL: SHOW COLUMNS FROM `wf_category` [ RunTime:0.000909s ]
+SQL: SELECT `id`,`name`,parent_id pid,`type`,`model_table`,`sort` FROM `wf_category` ORDER BY sort asc,id desc  [ RunTime:0.000100s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.010422s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010474s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000305s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000265s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000134s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000311s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001149s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000370s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000417s ]
+
+[ 2014-06-10T12:08:02+08:00 ] 121.32.130.122 /index.php/Admin/Login/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000535s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000627s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000366s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000440s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000912s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005716s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005772s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000210s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000259s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000161s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000278s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001040s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000379s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000424s ]
+
+[ 2014-06-10T12:08:02+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000379s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000449s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000924s ]
+
+[ 2014-06-10T14:54:14+08:00 ] 121.32.130.122 /index.php/Admin/Login/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.008461s ]
+INFO: [ route_check ] --END-- [ RunTime:0.008535s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000585s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.014772s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015450s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.048115s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.048193s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000544s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000501s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000340s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000465s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002002s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000625s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000670s ]
+
+[ 2014-06-10T14:54:15+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000385s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000958s ]
+
+[ 2014-06-10T14:55:12+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Login&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000510s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000718s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001400s ]
+SQL: SHOW COLUMNS FROM `wf_admin_user` [ RunTime:0.001171s ]
+SQL: SELECT * FROM `wf_admin_user` WHERE ( `username` = 'chenheijun1' ) LIMIT 1   [ RunTime:0.000273s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.011800s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011882s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000245s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000281s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000138s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000268s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001079s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000441s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000486s ]
+
+[ 2014-06-10T14:55:19+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Login&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000347s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000441s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000941s ]
+SQL: SHOW COLUMNS FROM `wf_admin_user` [ RunTime:0.001135s ]
+SQL: SELECT * FROM `wf_admin_user` WHERE ( `username` = 'chenheijun1' ) LIMIT 1   [ RunTime:0.000101s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005621s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005685s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000220s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000261s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000135s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000257s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001008s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000384s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000429s ]
+
+[ 2014-06-10T14:55:25+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Login&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000327s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000482s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000902s ]
+SQL: SHOW COLUMNS FROM `wf_admin_user` [ RunTime:0.001154s ]
+SQL: SELECT * FROM `wf_admin_user` WHERE ( `username` = 'chenheijun1' ) LIMIT 1   [ RunTime:0.000114s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005432s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005484s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000222s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000227s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000133s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000259s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000978s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000395s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000442s ]
+
+[ 2014-06-10T14:56:17+08:00 ] 121.32.130.122 /index.php/Admin/Login/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000627s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000697s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000363s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000441s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000894s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005671s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005733s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000217s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000339s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000180s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000386s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001315s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000562s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000647s ]
+
+[ 2014-06-10T14:56:17+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000410s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000534s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001055s ]
+
+[ 2014-06-10T14:56:17+08:00 ] 121.32.130.122 /index.php/Admin/Login/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000657s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000731s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000352s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000442s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000882s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005484s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005540s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000243s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000249s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000133s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000336s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001116s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000439s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000492s ]
+
+[ 2014-06-10T14:56:18+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000356s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000516s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000971s ]
+
+[ 2014-06-10T14:56:18+08:00 ] 121.32.130.122 /index.php/Admin/Login/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000523s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000591s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000334s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000450s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000863s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005608s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005666s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000229s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000235s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000148s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000259s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001002s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000376s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000422s ]
+
+[ 2014-06-10T14:56:18+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000326s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000459s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000879s ]
+
+[ 2014-06-10T14:56:26+08:00 ] 121.32.130.122 /index.php/Admin/Login/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000516s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000581s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000317s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000465s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000860s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005379s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005431s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000208s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000292s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000145s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000435s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001220s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000406s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000486s ]
+
+[ 2014-06-10T14:56:26+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000330s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000621s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001045s ]
+
+[ 2014-06-10T14:56:27+08:00 ] 121.32.130.122 /index.php/Admin/Login/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000582s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000650s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000352s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000432s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000860s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005178s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005228s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000206s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000231s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000140s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000274s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000982s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000367s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000412s ]
+
+[ 2014-06-10T14:56:27+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000349s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000437s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000883s ]
+
+[ 2014-06-10T14:56:27+08:00 ] 121.32.130.122 /index.php/Admin/Login/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000513s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000577s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000351s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000467s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000897s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005446s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005500s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000213s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000239s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000133s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000275s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000993s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000370s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000415s ]
+
+[ 2014-06-10T14:56:27+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000356s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000434s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000883s ]
+
+[ 2014-06-10T14:56:28+08:00 ] 121.32.130.122 /index.php/Admin/Login/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000495s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000562s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000325s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000455s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000860s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005415s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005474s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000208s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000237s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000165s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000261s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001010s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000368s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000413s ]
+
+[ 2014-06-10T14:56:28+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000382s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000480s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000962s ]
+
+[ 2014-06-10T14:56:30+08:00 ] 121.32.130.122 /index.php/Admin/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000491s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000557s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000327s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000460s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000866s ]
+NOTIC: [8] Undefined variable: group /var/www/wfcms/ThinkPHP/Lib/Core/App.class.php 第 95 行.
+ERR: 无法加载模块:index.php
+
+[ 2014-06-10T14:56:33+08:00 ] 121.32.130.122 /index.php/Admin
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000525s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000593s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000480s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000498s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001083s ]
+SQL: select node.id,node.name from wf_admin_role as role,wf_admin_role_user as user,wf_admin_access as access ,wf_admin_node as node where user.user_id='45' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=1 and node.status=1 [ RunTime:0.020894s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.015251s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015317s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000219s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000268s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000137s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000262s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001017s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000406s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000451s ]
+
+[ 2014-06-10T14:56:36+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Category&a=category
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000359s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000469s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000929s ]
+SQL: SHOW COLUMNS FROM `wf_category` [ RunTime:0.000936s ]
+SQL: SELECT `id`,`name`,parent_id pid,`type`,`model_table`,`sort` FROM `wf_category` ORDER BY sort asc,id desc  [ RunTime:0.000113s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.049914s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049987s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000283s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000290s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000164s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000268s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001138s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000377s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000422s ]
+
+[ 2014-06-10T14:56:39+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Index&a=logout
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000546s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000642s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001329s ]
+SQL: SHOW COLUMNS FROM `wf_opt_log` [ RunTime:0.001268s ]
+SQL: INSERT INTO `wf_opt_log` (`created_date`,`ip`,`username`,`uid`,`action`,`module`,`info`) VALUES ('2014-06-10 14:56:39','121.32.130.122','liyafeng',45,'logout','Index','') [ RunTime:0.001143s ]
+
+[ 2014-06-10T14:56:39+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Index&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000346s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000542s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001010s ]
+
+[ 2014-06-10T14:56:39+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Login&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000524s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000699s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001370s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007205s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007279s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000249s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000321s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000137s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000343s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001197s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000492s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000540s ]
+
+[ 2014-06-10T14:56:39+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000340s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000444s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000879s ]
+
+[ 2014-06-10T14:56:43+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Login&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000388s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000482s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000964s ]
+SQL: SHOW COLUMNS FROM `wf_admin_user` [ RunTime:0.001183s ]
+SQL: SELECT * FROM `wf_admin_user` WHERE ( `username` = 'chenheijun1' ) LIMIT 1   [ RunTime:0.000102s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005482s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005535s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000240s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000243s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000142s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000326s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001132s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000474s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000521s ]
+
+[ 2014-06-10T14:57:32+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Login&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000358s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000433s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000886s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005288s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005337s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000209s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000245s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000159s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000257s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000998s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000366s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000410s ]
+
+[ 2014-06-10T14:57:33+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000326s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000469s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000889s ]
+
+[ 2014-06-10T14:57:33+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Login&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000345s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000463s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000918s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005417s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005476s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000207s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000233s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000153s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000261s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000980s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000359s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000403s ]
+
+[ 2014-06-10T14:57:33+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000368s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000542s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001011s ]
+
+[ 2014-06-10T14:57:33+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Login&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000340s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000450s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000883s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005230s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005279s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000207s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000265s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000150s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000274s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001026s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000368s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000419s ]
+
+[ 2014-06-10T14:57:33+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Login&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000333s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000476s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000909s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005423s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005481s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000236s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000235s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000149s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000257s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001004s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000362s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000406s ]
+
+[ 2014-06-10T14:57:33+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000348s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000435s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000879s ]
+
+[ 2014-06-10T14:57:36+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Login&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000328s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000479s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000900s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005534s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005592s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000209s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000229s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000141s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000257s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000987s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000364s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000409s ]
+
+[ 2014-06-10T14:57:53+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Login&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000346s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000491s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000933s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005279s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005355s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000208s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000243s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000151s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000256s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000986s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000361s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000404s ]
+
+[ 2014-06-10T14:57:53+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000354s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000444s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000900s ]
+
+[ 2014-06-10T14:57:54+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Login&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000332s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000434s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000890s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005676s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005732s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000227s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000252s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000189s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000278s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001094s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000365s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000409s ]
+
+[ 2014-06-10T14:57:54+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Login&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000338s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000471s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000905s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005306s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005358s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000210s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000263s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000136s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000254s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001026s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000371s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000416s ]
+
+[ 2014-06-10T14:57:54+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000328s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000503s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000929s ]
+
+[ 2014-06-10T14:58:00+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Login&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000354s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000472s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000925s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005389s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005439s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000211s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000235s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000142s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000272s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000987s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000362s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000405s ]
+
+[ 2014-06-10T14:58:00+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000327s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000551s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000974s ]
+
+[ 2014-06-10T14:58:00+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Login&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000344s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000460s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000910s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005776s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005850s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000234s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000277s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000138s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000265s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001044s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000420s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000465s ]
+
+[ 2014-06-10T14:58:01+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000490s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000679s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001314s ]
+
+[ 2014-06-10T14:58:01+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Login&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000359s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000434s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000888s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005240s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005289s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000207s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000269s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000132s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000253s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000990s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000388s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000432s ]
+
+[ 2014-06-10T14:58:01+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000336s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000501s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000932s ]
+
+[ 2014-06-10T14:58:01+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Login&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000328s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000465s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000888s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005949s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005998s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000245s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000260s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000169s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000346s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001182s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000424s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000468s ]
+
+[ 2014-06-10T14:58:01+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000358s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000448s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000899s ]
+
+[ 2014-06-10T14:58:26+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Login&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000332s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000464s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000891s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005667s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005717s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000211s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000254s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000178s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000261s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001031s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000361s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000415s ]
+
+[ 2014-06-10T14:58:26+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000439s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000439s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000979s ]
+
+[ 2014-06-10T14:58:27+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Login&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000352s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000435s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000882s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005277s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005334s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000212s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000272s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000133s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000271s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001024s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000483s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000540s ]
+
+[ 2014-06-10T14:58:27+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000329s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000443s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000891s ]
+

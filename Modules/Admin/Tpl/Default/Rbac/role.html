@@ -1,0 +1,46 @@
+<div class="definewidth m10">
+    <button type="button" class="btn btn-success" id="addnew">新增角色</button>
+</div>
+<table class="table table-bordered table-hover definewidth m10" >
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>角色名称</th>
+        <th>角色描述</th>
+        <th>开启状态</th>
+        <th>管理操作</th>
+    </tr>
+    </thead>
+        <foreach name='role' item='v'>
+	     <tr>
+            <td>{$v.id}</td>
+            <td>{$v.name}</td>
+            <td>{$v.remark}</td>
+            <td>
+                <if condition='$v["status"]'>开启<else/>关闭</if>
+            </td>
+            <td>
+                  <a href="{:U(GROUP_NAME . '/Rbac/editRole',array('id'=>$v['id']))}">编辑</a>
+                  <a href="{:U(GROUP_NAME . '/Rbac/delRole',array('id'=>$v['id']))}">删除</a>
+                  <a href="{:U(GROUP_NAME . '/Rbac/access',array('rid'=>$v['id']))}">配置权限</a>
+            </td>
+        </tr>
+        </foreach>
+</table>
+
+<script language="Javascript">
+    $(function () {
+        $('#addnew').click(function(){
+            window.location.href="{:U(GROUP_NAME . '/Rbac/addRole')}";
+        });
+    });
+    function del(id)
+    {
+        if(confirm("确定要删除吗？"))
+        {
+            var url = "index.html";
+            window.location.href=url;
+        }
+    }
+</script>
+

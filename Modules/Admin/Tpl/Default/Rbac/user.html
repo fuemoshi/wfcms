@@ -1,0 +1,61 @@
+<form class="form-inline definewidth m20" action="{:U(GROUP_NAME . '/Rbac/user')}" method="post">
+    帐号名称：
+    <input type="text" name="username" id="username" class="abc input-default" placeholder="" value="">&nbsp;&nbsp;
+    <button type="submit" class="btn btn-primary">查询</button>&nbsp;&nbsp;
+    <button type="button" class="btn btn-success" id="addnew">新增帐号</button>
+</form>
+<table class="table table-bordered table-hover definewidth m10" >
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>帐号名</th>
+        <th>最后登录时间</th>
+        <th>最后登录IP</th>
+        <th>锁定状态</th>
+        <th>所属角色</th>
+        <th>管理操作</th>
+    </tr>
+    </thead>
+        <foreach name='result' item='v'>
+	     <tr>
+            <td>{$v.id}</td>
+            <td>{$v.username}</td>
+            <td>{$v.last_login_date}</td>
+            <td>{$v.last_login_ip}</td>
+            <td><if condition="$v['status'] neq 1">锁定<else/>未锁定</if></td>
+            <td>
+                <if condition="$v['username'] eq C('RBAC_SUPERADMIN')">
+                    超级管理员
+                    <else/>
+                        <ul style="margin:0;padding:0">
+                            <foreach name="v.admin_role" item="value">
+                                <li>{$value.name}({$value.remark})</li>
+                            </foreach>
+                        </ul>
+                </if>
+            </td>
+            <td>
+                  <a href="{:U(GROUP_NAME . '/Rbac/editUser',array('id'=>$v['id']))}">编辑</a>
+                  <a href="{:U(GROUP_NAME . '/Rbac/delUser',array('id'=>$v['id']))}">删除</a>
+            </td>
+        </tr>
+        </foreach>
+</table>
+<div class="inline pull-right page">{$show}</div>
+
+<script language="Javascript">
+    $(function () {
+        $('#addnew').click(function(){
+            window.location.href="{:U(GROUP_NAME . '/Rbac/addUser')}";
+        });
+    });
+    function del(id)
+    {
+        if(confirm("确定要删除吗？"))
+        {
+            var url = "index.html";
+            window.location.href=url;
+        }
+    }
+</script>
+

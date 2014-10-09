@@ -1,0 +1,40 @@
+<form action="{:U(GROUP_NAME . '/Personal/editProfile')}" method="post">
+<table class="table table-bordered table-hover definewidth m10">
+    <tr><th colspan="2">联系方式</th></tr>
+    <tr>
+        <td width="10%" class="tableleft">用户帐号</td>
+        <td><input type="text" name="username" value="{$user.username}" disabled/></td>
+    </tr>
+    <tr>
+        <td class="tableleft">密码</td>
+        <td><input type="password" name="password"/><span class="tip">({$Think.lang.pwd_empty_not_save})</span></td>
+    </tr>
+    <tr>
+        <td class="tableleft">联系人</td>
+        <td><input type="realname" name="realname"/></td>
+    </tr>
+    <tr>
+        <td width="10%" class="tableleft">手机</td>
+        <td><input type="text" name="phone" value="{$user.phone}"/></td>
+    </tr>
+    <tr>
+        <td width="10%" class="tableleft">QQ</td>
+        <td><input type="text" name="qq" value="{$user.qq}"/></td>
+    </tr>
+    <tr>
+        <td width="10%" class="tableleft">联系地址</td>
+        <td><input type="text" style="width:480px" name="address" value="{$user.address}"/></td>
+    </tr>
+    <tr>
+        <td width="10%" class="tableleft">联系邮箱</td>
+        <td><input type="text" name="email" value="{$user.email}"/></td>
+    </tr>
+    <tr>
+        <td class="tableleft"></td>
+        <td>
+            <input type="hidden" name="id" value="{$user.id}"/>
+            <button type="submit" class="btn btn-primary" type="button">保存</button>
+        </td>
+    </tr>
+</table>
+</form>

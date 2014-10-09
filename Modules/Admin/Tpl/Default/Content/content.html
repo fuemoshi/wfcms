@@ -1,0 +1,36 @@
+<style type="text/css">
+    body{
+        padding: 0px;
+        margin: 0px;
+        background: #CCCCCC;
+    }
+    .left{
+        width: 180px;
+        margin: 0px 8px 0 0;
+        background: #ffffff;
+        float:left;
+    }
+    .right{
+        margin: 0px 8px 0 0;
+        background: #ffffff;
+        position:relative;
+        overflow:hidden;
+        width: auto;
+    }
+</style>
+<div class="content">
+    <div class="left">
+        <iframe name="center_frame" id="center_frame" src="{:U(GROUP_NAME.'/Content/left')}" frameborder="false" scrolling="auto" style="border: none;" width="100%" allowtransparency="true"></iframe>
+    </div>
+    <div class="right">
+        <iframe name="right" id="right" src="{:U(GROUP_NAME.'/Content/right')}" frameborder="false" scrolling="auto" style="border: none;" width="100%"  allowtransparency="true"></iframe>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        $('#center_frame').height($(window).height()-5);
+        $('#right').height($(window).height()-5);
+    });
+</script>
+

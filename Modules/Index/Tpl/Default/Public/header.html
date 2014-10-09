@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>{$title}</title>
+    <meta name="keywords" content="{$keywords}">
+    <meta name="description" content="{$description}">
+    <link rel="stylesheet" type="text/css" href="__CSS__/style.css?t=<?php echo time();?>" />
+    <script type="text/javascript" src="__JS__/jquery.js"></script>
+    <script type="text/javascript" src="__JS__/expand.js"></script>
+    <script language="javascript" type="text/javascript" src="__JS__/My97DatePicker/WdatePicker.js"></script>
+</head>
+<body>
+{$test}
+<div class="head_box">
+    <div class="head_right">
+        <div class="logo_img">
+            <img height="90" src="__IMAGES__/logo.png" alt=""/>
+        </div>
+        <div class="head_right2">
+            <form action="{:U(GROUP_NAME . '/Index/products')}" name="selectForm2" style="margin:0; padding:0;" method="post">
+                <table width="260" border="0" cellpadding="0" cellspacing="0">
+                    <tbody><tr>
+                        <td height="5" colspan="2" align="center"></td>
+                        <td width="62" rowspan="3" align="center"><img src="__IMAGES__/order.png" width="50" height="55"></td>
+                    </tr>
+                    <tr>
+                        <td height="20" colspan="2" align="right"><a href="{:U(GROUP_NAME . '/Index/check')}" target="_blank">防伪查询</a>
+                    </tr>
+                    <tr>
+                        <td width="147">
+                            <label for="textfield"></label>
+                            <input name="title" type="text" class="so_input" id="textfield" value="产品搜索">
+                        </td>
+                        <td width="51" align="right"><input type="image" src="__IMAGES__/go.gif" width="44" height="20"></td>
+                    </tr>
+                    </tbody></table>
+            </form>
+        </div>
+    </div>
+
+    <div class="menu_box">
+        <ul>
+            <li><a href="{:U(GROUP_NAME . '/Index/index')}" <php>echo $actionName == 'index' ? 'class="menu_selected"' : ''</php> style="width: 88px;">首页</a></li>
+            <li><a href="{:U(GROUP_NAME . '/Index/about')}" <php>echo $actionName == 'about' ? 'class="menu_selected"' : ''</php>>关于医朵</a></li>
+            <li><a href="{:U(GROUP_NAME . '/Index/products')}" <php>echo $actionName == 'products' ? 'class="menu_selected"' : ''</php>>理肤产品</a></li>
+            <li><a href="{:U(GROUP_NAME . '/Index/news')}" <php>echo $actionName == 'news' ? 'class="menu_selected"' : ''</php>>资讯中心</a></li>
+            <li><a href="{:U(GROUP_NAME . '/Index/sellers')}" <php>echo $actionName == 'sellers' ? 'class="menu_selected"' : ''</php>>畅销榜单</a></li>
+            <li><a href="{:U(GROUP_NAME . '/Index/new_products')}" <php>echo $actionName == 'new_products' ? 'class="menu_selected"' : ''</php>>新品上市</a></li>
+            <li><a href="{:U(GROUP_NAME . '/Index/article')}" <php>echo $actionName == 'article' ? 'class="menu_selected"' : ''</php>>美丽物语</a></li>
+        </ul>
+    </div>
+    <div class="c"></div>
+</div>
+<script>
+    $('#textfield').focus(function(){ $(this).val('');});
+</script>

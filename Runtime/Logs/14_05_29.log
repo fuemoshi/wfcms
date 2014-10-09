@@ -1,0 +1,1551 @@
+[ 2014-05-29T19:49:33+08:00 ] 121.32.130.122 /index.php/Admin/Login/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.023277s ]
+INFO: [ route_check ] --END-- [ RunTime:0.023377s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000609s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.098570s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.099323s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.028414s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028551s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000525s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000472s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000347s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000493s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001969s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000798s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000858s ]
+
+[ 2014-05-29T19:49:33+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000344s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000496s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000987s ]
+
+[ 2014-05-29T19:49:38+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Login&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000420s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000444s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000966s ]
+SQL: SHOW COLUMNS FROM `wf_admin_user` [ RunTime:0.033702s ]
+SQL: SELECT * FROM `wf_admin_user` WHERE ( `username` = 'admin' ) LIMIT 1   [ RunTime:0.000134s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007083s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007207s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000276s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000315s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000202s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000328s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001294s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000431s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000477s ]
+
+[ 2014-05-29T19:49:44+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Login&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000326s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000453s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000871s ]
+SQL: SHOW COLUMNS FROM `wf_admin_user` [ RunTime:0.001534s ]
+SQL: SELECT * FROM `wf_admin_user` WHERE ( `username` = 'admin' ) LIMIT 1   [ RunTime:0.000114s ]
+SQL: UPDATE `wf_admin_user` SET `last_login_date`='2014-05-29 19:49:43',`last_login_ip`='121.32.130.122' WHERE ( `id` = 1 ) [ RunTime:0.049772s ]
+SQL: SHOW COLUMNS FROM `wf_opt_log` [ RunTime:0.037522s ]
+SQL: INSERT INTO `wf_opt_log` (`created_date`,`ip`,`username`,`uid`,`action`,`module`,`info`) VALUES ('2014-05-29 19:49:44','121.32.130.122','admin',1,'login','Login','') [ RunTime:0.011577s ]
+
+[ 2014-05-29T19:49:44+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Index&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000348s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000933s ]
+SQL: select node.id,node.name from wf_admin_role as role,wf_admin_role_user as user,wf_admin_access as access ,wf_admin_node as node where user.user_id='1' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=1 and node.status=1 [ RunTime:0.000110s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007045s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007105s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000215s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000276s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000165s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000321s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001124s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000412s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000457s ]
+
+[ 2014-05-29T19:49:51+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Category&a=category
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000374s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000495s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000966s ]
+SQL: SHOW COLUMNS FROM `wf_category` [ RunTime:0.000947s ]
+SQL: SELECT `id`,`name`,parent_id pid,`type`,`model_table`,`sort` FROM `wf_category` ORDER BY sort asc,id desc  [ RunTime:0.000100s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.012985s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013038s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000246s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000279s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000138s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000299s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001092s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000445s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000499s ]
+
+[ 2014-05-29T19:50:01+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Category&a=addCategory&id=16
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000337s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000938s ]
+SQL: SHOW COLUMNS FROM `wf_category` [ RunTime:0.001285s ]
+SQL: SELECT `id`,`name`,parent_id pid FROM `wf_category`  [ RunTime:0.020545s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.009169s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009237s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000232s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000297s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000144s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000264s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001076s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000374s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000435s ]
+
+[ 2014-05-29T19:50:20+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Category&a=category
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000548s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000672s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001385s ]
+SQL: SHOW COLUMNS FROM `wf_category` [ RunTime:0.001414s ]
+SQL: SELECT `id`,`name`,parent_id pid,`type`,`model_table`,`sort` FROM `wf_category` ORDER BY sort asc,id desc  [ RunTime:0.000162s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.015699s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015777s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000405s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000299s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000195s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000334s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001417s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000437s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000499s ]
+
+[ 2014-05-29T19:50:22+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Category&a=addCategory&id=31
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000558s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000743s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001456s ]
+SQL: SHOW COLUMNS FROM `wf_category` [ RunTime:0.001187s ]
+SQL: SELECT `id`,`name`,parent_id pid FROM `wf_category`  [ RunTime:0.000114s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007263s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007349s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000246s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000277s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000205s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000297s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001175s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000425s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000473s ]
+
+[ 2014-05-29T19:50:30+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Category&a=addCategory
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000472s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000637s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001242s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/wfcms/Modules/Admin/Action/CategoryAction.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `wf_category` [ RunTime:0.001226s ]
+SQL: INSERT INTO `wf_category` (`model_table`,`name`,`type`,`images`,`parent_id`,`created_date`,`last_modified_date`) VALUES ('news','',0,'',32,'2014-05-29 19:50:30','2014-05-29 19:50:30') [ RunTime:0.044586s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007192s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007276s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000260s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000380s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000167s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000271s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001225s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000453s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000498s ]
+
+[ 2014-05-29T19:50:31+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Category&a=category
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000356s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000482s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000962s ]
+SQL: SHOW COLUMNS FROM `wf_category` [ RunTime:0.001429s ]
+SQL: SELECT `id`,`name`,parent_id pid,`type`,`model_table`,`sort` FROM `wf_category` ORDER BY sort asc,id desc  [ RunTime:0.013919s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.017720s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017819s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000538s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000424s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000248s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000440s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001870s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000658s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000738s ]
+
+[ 2014-05-29T19:50:32+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Category&a=category
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000531s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000701s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001375s ]
+SQL: SHOW COLUMNS FROM `wf_category` [ RunTime:0.001402s ]
+SQL: SELECT `id`,`name`,parent_id pid,`type`,`model_table`,`sort` FROM `wf_category` ORDER BY sort asc,id desc  [ RunTime:0.000150s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.017775s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017849s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000397s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000300s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000143s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000349s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001368s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000587s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000663s ]
+
+[ 2014-05-29T19:50:50+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Content&a=content
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000556s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000708s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001418s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.012476s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012600s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000363s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000333s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000198s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000441s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001543s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000620s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000694s ]
+
+[ 2014-05-29T19:50:50+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Content&a=left
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000389s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000527s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001012s ]
+SQL: SHOW COLUMNS FROM `wf_category` [ RunTime:0.001162s ]
+SQL: SELECT `id`,`name`,parent_id pid,`type`,`model_table`,`sort` FROM `wf_category` ORDER BY sort asc,id desc  [ RunTime:0.000111s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.011099s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011169s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000352s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000372s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000193s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000429s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001547s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000577s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000649s ]
+
+[ 2014-05-29T19:50:50+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Content&a=right
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000548s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000662s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001351s ]
+
+[ 2014-05-29T19:50:55+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Pattern&a=index&parent_id=33&type=0&model_table=news
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000406s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000462s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000999s ]
+NOTIC: [8] Undefined variable: var /var/www/wfcms/ThinkPHP/Common/functions.php 第 247 行.
+NOTIC: [2] array_reverse() expects parameter 1 to be array, null given /var/www/wfcms/ThinkPHP/Common/functions.php 第 247 行.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given /var/www/wfcms/ThinkPHP/Common/functions.php 第 247 行.
+
+[ 2014-05-29T19:50:55+08:00 ] 121.32.130.122 /index.php?&g=Admin&m=News&a=index&parent_id=33&type=0&model_table=news
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000359s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000440s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000893s ]
+SQL: SHOW COLUMNS FROM `wf_news` [ RunTime:0.016472s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wf_news` WHERE ( `parent_id` = 33 ) LIMIT 1   [ RunTime:0.003208s ]
+SQL: SELECT * FROM `wf_news` WHERE ( `parent_id` = 33 ) ORDER BY sort asc,id desc LIMIT 0,20   [ RunTime:0.000321s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007048s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007131s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000206s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000278s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000137s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000275s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001023s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000375s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000420s ]
+
+[ 2014-05-29T19:51:01+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Pattern&a=index&parent_id=33&type=0&model_table=news
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000330s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000471s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000897s ]
+NOTIC: [8] Undefined variable: var /var/www/wfcms/ThinkPHP/Common/functions.php 第 247 行.
+NOTIC: [2] array_reverse() expects parameter 1 to be array, null given /var/www/wfcms/ThinkPHP/Common/functions.php 第 247 行.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given /var/www/wfcms/ThinkPHP/Common/functions.php 第 247 行.
+
+[ 2014-05-29T19:51:01+08:00 ] 121.32.130.122 /index.php?&g=Admin&m=News&a=index&parent_id=33&type=0&model_table=news
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000331s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000550s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000982s ]
+SQL: SHOW COLUMNS FROM `wf_news` [ RunTime:0.000986s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wf_news` WHERE ( `parent_id` = 33 ) LIMIT 1   [ RunTime:0.000104s ]
+SQL: SELECT * FROM `wf_news` WHERE ( `parent_id` = 33 ) ORDER BY sort asc,id desc LIMIT 0,20   [ RunTime:0.000108s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.008257s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008328s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000211s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000234s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000147s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000288s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001010s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000372s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000417s ]
+
+[ 2014-05-29T19:51:23+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Pattern&a=index&parent_id=33&type=0&model_table=news
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000333s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000527s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000961s ]
+NOTIC: [8] Undefined variable: var /var/www/wfcms/ThinkPHP/Common/functions.php 第 247 行.
+NOTIC: [2] array_reverse() expects parameter 1 to be array, null given /var/www/wfcms/ThinkPHP/Common/functions.php 第 247 行.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given /var/www/wfcms/ThinkPHP/Common/functions.php 第 247 行.
+
+[ 2014-05-29T19:51:23+08:00 ] 121.32.130.122 /index.php?&g=Admin&m=News&a=index&parent_id=33&type=0&model_table=news
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000370s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000492s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001014s ]
+SQL: SHOW COLUMNS FROM `wf_news` [ RunTime:0.000922s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wf_news` WHERE ( `parent_id` = 33 ) LIMIT 1   [ RunTime:0.000102s ]
+SQL: SELECT * FROM `wf_news` WHERE ( `parent_id` = 33 ) ORDER BY sort asc,id desc LIMIT 0,20   [ RunTime:0.000095s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.008149s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008209s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000207s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000234s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000151s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000257s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000977s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000371s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000426s ]
+
+[ 2014-05-29T19:51:30+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Pattern&a=index&parent_id=33&type=0&model_table=news
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000347s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000439s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000879s ]
+NOTIC: [8] Undefined variable: var /var/www/wfcms/ThinkPHP/Common/functions.php 第 247 行.
+NOTIC: [2] array_reverse() expects parameter 1 to be array, null given /var/www/wfcms/ThinkPHP/Common/functions.php 第 247 行.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given /var/www/wfcms/ThinkPHP/Common/functions.php 第 247 行.
+
+[ 2014-05-29T19:51:31+08:00 ] 121.32.130.122 /index.php?&g=Admin&m=News&a=index&parent_id=33&type=0&model_table=news
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000329s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000458s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000880s ]
+SQL: SHOW COLUMNS FROM `wf_news` [ RunTime:0.000953s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wf_news` WHERE ( `parent_id` = 33 ) LIMIT 1   [ RunTime:0.000083s ]
+SQL: SELECT * FROM `wf_news` WHERE ( `parent_id` = 33 ) ORDER BY sort asc,id desc LIMIT 0,20   [ RunTime:0.000072s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006412s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006468s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000227s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000244s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000135s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000258s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000992s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000393s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000437s ]
+
+[ 2014-05-29T19:51:35+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Content&a=content
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000328s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000535s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000974s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005660s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005724s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000214s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000236s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000139s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000260s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000976s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000432s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000476s ]
+
+[ 2014-05-29T19:51:35+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Content&a=left
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000364s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000465s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000930s ]
+SQL: SHOW COLUMNS FROM `wf_category` [ RunTime:0.001088s ]
+SQL: SELECT `id`,`name`,parent_id pid,`type`,`model_table`,`sort` FROM `wf_category` ORDER BY sort asc,id desc  [ RunTime:0.000109s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007073s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000305s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000248s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000156s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000278s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001124s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000443s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000488s ]
+
+[ 2014-05-29T19:51:35+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Content&a=right
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000392s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000702s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001223s ]
+
+[ 2014-05-29T19:51:37+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Category&a=category
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000360s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000462s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000919s ]
+SQL: SHOW COLUMNS FROM `wf_category` [ RunTime:0.001252s ]
+SQL: SELECT `id`,`name`,parent_id pid,`type`,`model_table`,`sort` FROM `wf_category` ORDER BY sort asc,id desc  [ RunTime:0.000220s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.012016s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012085s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000347s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000278s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000138s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000267s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001164s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000447s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000504s ]
+
+[ 2014-05-29T19:51:42+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Category&a=delCategory&id=33)
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000353s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000540s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000992s ]
+SQL: SHOW COLUMNS FROM `wf_category` [ RunTime:0.000970s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wf_category` WHERE ( `parent_id` = 33 ) LIMIT 1   [ RunTime:0.000251s ]
+SQL: SHOW COLUMNS FROM `wf_advertise` [ RunTime:0.013883s ]
+SQL: SELECT * FROM `wf_advertise` WHERE ( `id` = 33 ) LIMIT 1   [ RunTime:0.048792s ]
+SQL: DELETE FROM `wf_category` WHERE ( `id` = 33 ) [ RunTime:0.001002s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006603s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006675s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000216s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000235s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000139s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000280s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000999s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000376s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000419s ]
+
+[ 2014-05-29T19:51:44+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Category&a=category
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000331s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000454s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000882s ]
+SQL: SHOW COLUMNS FROM `wf_category` [ RunTime:0.000973s ]
+SQL: SELECT `id`,`name`,parent_id pid,`type`,`model_table`,`sort` FROM `wf_category` ORDER BY sort asc,id desc  [ RunTime:0.000297s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.010764s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010837s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000280s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000268s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000165s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000333s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001231s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000510s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000562s ]
+
+[ 2014-05-29T19:51:51+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Category&a=category
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000525s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000726s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001398s ]
+SQL: SHOW COLUMNS FROM `wf_category` [ RunTime:0.001219s ]
+SQL: SELECT `id`,`name`,parent_id pid,`type`,`model_table`,`sort` FROM `wf_category` ORDER BY sort asc,id desc  [ RunTime:0.000141s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.013641s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013743s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000296s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000302s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000140s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000348s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001240s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000558s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000623s ]
+
+[ 2014-05-29T19:51:52+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Category&a=addCategory
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000373s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000682s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001165s ]
+SQL: SHOW COLUMNS FROM `wf_category` [ RunTime:0.001101s ]
+SQL: SELECT `id`,`name`,parent_id pid FROM `wf_category`  [ RunTime:0.000258s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007246s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007309s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000289s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000284s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000139s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000261s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001115s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000398s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000471s ]
+
+[ 2014-05-29T19:51:56+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Content&a=content
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000426s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000697s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001256s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005739s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005800s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000234s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000265s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000170s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000361s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001199s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000394s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000463s ]
+
+[ 2014-05-29T19:51:56+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Content&a=left
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000434s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000516s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001072s ]
+SQL: SHOW COLUMNS FROM `wf_category` [ RunTime:0.001371s ]
+SQL: SELECT `id`,`name`,parent_id pid,`type`,`model_table`,`sort` FROM `wf_category` ORDER BY sort asc,id desc  [ RunTime:0.000135s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 1 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+NOTIC: [2] Missing argument 2 for afterLeft(), called in /var/www/wfcms/Modules/Admin/Common/function.php on line 46 and defined /var/www/wfcms/Modules/Admin/Common/function.php 第 59 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.010468s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010547s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000395s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000317s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000203s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000284s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001373s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000462s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000520s ]
+
+[ 2014-05-29T19:51:56+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Content&a=right
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000370s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000967s ]
+
+[ 2014-05-29T19:51:57+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Category&a=category
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000377s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001044s ]
+SQL: SHOW COLUMNS FROM `wf_category` [ RunTime:0.000978s ]
+SQL: SELECT `id`,`name`,parent_id pid,`type`,`model_table`,`sort` FROM `wf_category` ORDER BY sort asc,id desc  [ RunTime:0.000110s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.013337s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013395s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000320s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000329s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000158s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000284s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001230s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000468s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000524s ]
+
+[ 2014-05-29T19:51:58+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Category&a=addCategory&id=32
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000407s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000510s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001048s ]
+SQL: SHOW COLUMNS FROM `wf_category` [ RunTime:0.001215s ]
+SQL: SELECT `id`,`name`,parent_id pid FROM `wf_category`  [ RunTime:0.000094s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006752s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006806s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000232s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000266s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000133s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000316s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001076s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000446s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000496s ]
+
+[ 2014-05-29T19:52:04+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Category&a=category
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000471s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000540s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001143s ]
+SQL: SHOW COLUMNS FROM `wf_category` [ RunTime:0.001230s ]
+SQL: SELECT `id`,`name`,parent_id pid,`type`,`model_table`,`sort` FROM `wf_category` ORDER BY sort asc,id desc  [ RunTime:0.000108s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.011882s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011949s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000329s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000280s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000142s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000309s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001248s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000443s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000489s ]
+
+[ 2014-05-29T19:52:08+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Category&a=addCategory&id=14
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000596s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000729s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001480s ]
+SQL: SHOW COLUMNS FROM `wf_category` [ RunTime:0.001280s ]
+SQL: SELECT `id`,`name`,parent_id pid FROM `wf_category`  [ RunTime:0.000147s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.009134s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009227s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000352s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000443s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000214s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000445s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001655s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000424s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000476s ]
+
+[ 2014-05-29T19:52:16+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Category&a=category
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000406s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000442s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000973s ]
+SQL: SHOW COLUMNS FROM `wf_category` [ RunTime:0.000976s ]
+SQL: SELECT `id`,`name`,parent_id pid,`type`,`model_table`,`sort` FROM `wf_category` ORDER BY sort asc,id desc  [ RunTime:0.000092s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.010698s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010758s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000288s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000328s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000136s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000292s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001188s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000372s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000424s ]
+
+[ 2014-05-29T19:52:29+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Category&a=addCategory&id=31
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000348s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000437s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000877s ]
+SQL: SHOW COLUMNS FROM `wf_category` [ RunTime:0.000949s ]
+SQL: SELECT `id`,`name`,parent_id pid FROM `wf_category`  [ RunTime:0.000098s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006304s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006358s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000227s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000249s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000136s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000261s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001002s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000387s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000430s ]
+
+[ 2014-05-29T19:52:59+08:00 ] 121.32.130.122 /index.php?g=Admin&m=Category&a=category
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000330s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.000468s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000892s ]
+SQL: SHOW COLUMNS FROM `wf_category` [ RunTime:0.000941s ]
+SQL: SELECT `id`,`name`,parent_id pid,`type`,`model_table`,`sort` FROM `wf_category` ORDER BY sort asc,id desc  [ RunTime:0.000088s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Undefined variable: cnt /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 49 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/wfcms/Runtime/Cache/Admin/692354f47c1d8c147fa173147882d608.php 第 53 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.010624s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010674s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000273s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000263s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000133s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000261s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001062s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000365s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000412s ]
+

@@ -1,0 +1,23 @@
+<link href="__JS__/jstree/docs/assets/dist/themes/default/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript"  src="__JS__/jstree/dist/jstree.min.js"></script>
+
+<style type="text/css">
+    body{
+        margin:0px;
+        padding:0px;
+    }
+</style>
+
+
+<div class="contentLeft" id="jstree_div">
+    {:W('ContentLeft',$category)}
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        $('#jstree_div').jstree();
+        function open(){
+            alert('fu');
+        }
+    });
+</script>

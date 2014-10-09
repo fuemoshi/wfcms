@@ -1,0 +1,42 @@
+<script type="text/javascript" src="__JS__/jquery.form.js"></script>
+
+<div class="page_box">
+    <div class="pagebg_top">
+        <div class="pagebg_bottom">
+            <include file="Public:page_left"/>
+            <div class="page_right_box">
+
+                <div class="page_check_box">
+
+                    <div class="index_center_m_right_bg">
+                        <p><img src="__IMAGES__/index_size_02.jpg" width="131" height="20" /></p>
+                        <form id ="fw" target="_blank" action="__PUBLIC__/100315/Result.php" method ="GET">
+                            <p>
+                                <input type="text" name= "main"  value="" style=" float:left;padding:5px 0 5px 5px; font-size:13px; margin:10px 0 10px 5px;" />
+                                <label>
+                                    <input type="image" name="imageField" src="__IMAGES__/index_size_06.jpg" style="float:left;margin-top:12px;margin-left:12px;" />
+                                </label>
+                            </p>
+                            <p>&nbsp;</p>
+                        </form>
+                    </div>
+
+                </div>
+
+                <div style="width: 96%;  height: 120px; color: red; font-size: 18px;font-weight: bolder; padding-top: 10px; padding-left: 15px;" id="divResult"></div>
+
+            </div>
+            <div class="c"></div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function(){
+//        $('#fw').ajaxForm({
+//            url : '__PUBLIC__/100315/Result.php',
+//            success: function(res){
+//                alert(res);
+//            }
+//        });
+    });
+</script>

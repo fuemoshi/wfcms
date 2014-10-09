@@ -1,0 +1,49 @@
+<form action="{:U(GROUP_NAME . '/Advertise/addAdvertise')}"
+      method="post" class="definewidth m20" enctype="multipart/form-data">
+<table class="table table-bordered table-hover m10">
+    <tr>
+        <td class="tableleft" style="width:100px;">标题</td>
+        <td><input type="text" name="title"/></td>
+    </tr>
+    <tr>
+        <td class="tableleft">类别/位置</td>
+        <td>
+            <select name="position" id="">
+                <foreach name="posMap" item="v">
+                    <option value="{$key}">{$v}</option>
+                </foreach>
+            </select>
+        </td>
+    </tr>
+    <tr class="tr-image">
+        <td class="tableleft">图片</td>
+        <td>
+            <input name="image[]" type="file" />
+        </td>
+    </tr>
+    <tr class="tr-argv1">
+        <td class="tableleft">链接</td>
+        <td>http://<input style="width:350px;" type="text" name="url" value=""/>
+        <span class="tip">(*已自动加http://头)</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="tableleft">排序</td>
+        <td><input type="text" style="width: 30px;" name="sort" value="0"/></td>
+    </tr>
+    <tr>
+        <td class="tableleft"></td>
+        <td>
+            <input type="hidden" name="type" value="{:I('type')}"/>
+            <button type="submit" class="btn btn-primary" type="button">保存</button>
+        </td>
+    </tr>
+</table>
+</form>
+<script charset="utf-8" src="__JS__/kindeditor/kindeditor.js"></script>
+<script charset="utf-8" src="__JS__/kindeditor/lang/zh_CN.js"></script>
+<script>
+    KindEditor.ready(function(K) {
+        window.editor = K.create('#editor_id');
+    });
+</script>

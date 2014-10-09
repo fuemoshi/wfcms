@@ -1,0 +1,21 @@
+<div class="page_left_box">
+    <div class="page_left_title"><img src="__IMAGES__/t_{$actionName}.png" height="60"></div>
+    <div class="page_left_menu">
+        <ul>
+            <foreach name="category" item="v">
+                <li><a href="{:U(GROUP_NAME . '/Index/'. $actionName , array('type'=>$v['type'],'pid'=>$v['id']))}">{$v.name}</a></li>
+            </foreach>
+            <if condition="$actionName eq 'about'">
+                <li><a href="{:U(GROUP_NAME . '/Index/contact')}">联系我们</a></li>
+                <li><a href="{:U(GROUP_NAME . '/Index/check')}">防伪查询</a></li>
+                <!--<li><a href="{:U(GROUP_NAME . '/Index/sitemap')}">网站地图</a></li>-->
+            </if>
+        </ul>
+    </div>
+    <div class="page_left_ico">
+        <ul>
+            <li><a href="{:U(GROUP_NAME . '/Index/check')}"><img src="__IMAGES__/b_securlty.jpg" alt="防伪查询" width="133" height="73" border="0"></a></li>
+            <li><a href="{:U(GROUP_NAME . '/Index/article')}"><img src="__IMAGES__/b_pri.jpg" alt="原液理肤手册" width="133" height="73" border="0"></a></li>
+        </ul>
+    </div>
+</div>

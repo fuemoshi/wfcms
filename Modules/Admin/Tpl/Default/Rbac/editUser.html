@@ -1,0 +1,53 @@
+<script type="text/javascript">
+    $(function(){
+        $('#add-role').click(function(){
+            var obj = $(this).parents('tr').clone();
+            obj.find('#add-role').remove();
+            $('#last').before(obj);
+        });
+    });
+</script>
+<style type="text/css">
+    #add-role{
+        display: inline-block;
+        width : 100px;
+        height: 26px;
+        line-height: 26px;
+        cursor: pointer;
+    }
+</style>
+<form action="{:U(GROUP_NAME . '/Rbac/editUser')}" method="post">
+<table class="table table-bordered table-hover definewidth m10">
+    <tr>
+        <td width="10%" class="tableleft">用户帐号</td>
+        <td><input type="text" name="username" value="{$user.username}"/></td>
+    </tr>
+    <tr>
+        <td class="tableleft">密码</td>
+        <td><input type="password" name="password"/><span class="tip">({$Think.lang.pwd_empty_not_save})</span></td>
+    </tr>
+
+    <foreach name="role_user" item="ru">
+        <tr>
+            <td class="tableleft">所属角色</td>
+            <td>
+                <select name="role_id[]" id="">
+                    <option value="">无</option>
+                    <foreach name="role" item="v">
+                        <option value="{$v.id}" <if condition="$ru['role_id'] eq $v['id']">selected</if>>{$v.name}({$v.remark})</option>
+                    </foreach>
+                </select>
+                <span id="add-role">[ 添加角色 ]</span>
+            </td>
+        </tr>
+    </foreach>
+
+    <tr id="last">
+        <td class="tableleft"></td>
+        <td>
+            <input type="hidden" name="id" value="{$user.id}"/>
+            <button type="submit" class="btn btn-primary" type="button">保存</button>&nbsp;&nbsp;<button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
+        </td>
+    </tr>
+</table>
+</form>
