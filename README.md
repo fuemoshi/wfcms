@@ -8,6 +8,7 @@
 <h3>使用方法:</h3>
 	1、后台访问 index.php?g=Admin&m=Login&a=index
 	2、用户名密码都为 admin
-	3、上线演示地址
-		后台：http://106.187.102.195:6607/index.php?g=Admin
-		前台：http://106.187.102.195:6607/
+
+<h3>在线演示</h3>
+	http://106.187.102.195:6607/index.php?g=Admin
+	http://106.187.102.195:6607/
